@@ -11,6 +11,7 @@ var sectorone = {
     total: 0,
     hoursales: [],
 
+    
     numofcustomers: function () {
         for (let index = 0; index < 13; index++) {
             this.arraycustomernum[index] = Math.floor(Math.random() * (this.maximumcustomers - this.minimumcustomers) + this.minimumcustomers);
@@ -20,6 +21,7 @@ var sectorone = {
     },
 
 
+    
 
     salescalculation: function () {
         for (let index = 0; index < this.arraycustomernum.length; index++) {
@@ -66,6 +68,17 @@ ulLink.appendChild(itemlist);
 
 
 }
+
+
+function location(min, max, average, name) {
+    this.minimumcustomers = min;
+    this.maximumcustomers = max;
+    this.arraycustomernum = average;
+    this.sectorlocation = name;
+}
+
+
+location
 
 //Tokyo
 var sectortwo = {
