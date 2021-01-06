@@ -1,34 +1,32 @@
 
 'use strict'
-//creating a global hours array and a function to grnerate a random number of customers per hour
+
 var hours = ["6:00am", "7:00am", "8:00am", " 9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "6:00pm", "7:00pm"]
 function randomNumOfCustomers(minimum, maximum) {
     return Math.floor(Math.random() * (maximum - minimum) + minimum);
 }
 
-//a single constructor function
 function Location(min, max, average, name) {
     this.minCustomers = min;
     this.maxCustomers = max;
     this.averageCookiesSold = average;
     this.locationName = name;
-    //this.cookiesPerHour= [];
+   
 }
-// function to generate a reandom number of customers each hour
+
 Location.prototype.numOfCustomers = function () {
     return randomNumOfCustomers(this.minCustomers, this.maxCustomers);
 }
-// function for creating an array of cookies sold per hour
+
 Location.prototype.calAverCookiePerHour = function () {
     var cookiesPerHour = [];
     for (var i = 0; i < hours.length; i++) {
         cookiesPerHour[i] = this.numOfCustomers() * this.averageCookiesSold;
     }
     return cookiesPerHour;
-    // this.cookiesPerHour= cookiesPerHour;
+   
 }
-//Writing HTML code
-//Header Row:
+
 function firstRender() {
     var parentElement = document.getElementById("TableOfData");
     console.log(parentElement);
@@ -37,10 +35,10 @@ function firstRender() {
     var h2 = document.createElement('h2');
     h2.textContent = "Locations: ";
     article.appendChild(h2);
-    // start of the table
+  
     var table = document.createElement('table');
     article.appendChild(table);
-    // adding headings (first row)
+    
     var tableFirstRow = document.createElement('tr');
     table.appendChild(tableFirstRow);
 
@@ -58,7 +56,6 @@ function firstRender() {
     tableFirstRow.appendChild(headerDailyTotal);
 }
 
-//creating table of data as a method of the object
 Location.prototype.renderLocationInTable = function () {
     var parentElement = document.getElementsByTagName('table');
     console.log(parentElement);
@@ -81,7 +78,7 @@ Location.prototype.renderLocationInTable = function () {
     dailyTotal.textContent = total;
     tableSecondRow.appendChild(dailyTotal);
 }
-// creating the final row
+
 function lastRender() {
     var parentElement = document.getElementsByTagName('table');
     var tablefinalRow = document.createElement('tr');
@@ -105,7 +102,6 @@ function lastRender() {
 }
 
 
-//creating an object for each location from the constructor
 var seattle = new Location(23, 65, 6.3, 'Seattle')
 console.log(seattle);
 console.log(seattle.calAverCookiePerHour());
@@ -118,8 +114,6 @@ console.log(paris);
 var lima = new Location(2, 16, 4.9, 'Lima');
 console.log(lima);
 
-
-//Calling the functions to create the table:
 firstRender();
 seattle.renderLocationInTable();
 tokyo.renderLocationInTable();
