@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Sale Data- Lab06</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
 </head>
 <body>
     <header>
@@ -21,6 +19,32 @@
         </div>
         <h1>Salmon Cookies-Sale</h1>
     </header>
+    <form id="eventid">
+        <fieldset>
+            <label for="locationNameid" >
+                Location Name: 
+              </label>
+              <input name="locationNamename" id="locationNameid" type="text" placeholder="add Location Name here" required>
+              <br>
+              <label for="MinCustomerid" >
+                Minimom Customers Per Hour: 
+              </label>
+              <input name="minCustomerName" id="MinCustomerid" type="text" placeholder="minimun number of your customers" required>
+              <br>
+              <label for="MaxCustomerid" >
+                Maximom Customers Per Hour: 
+              </label>
+              <input name="maxCustomerName" id="maxCustomerid" type="text" placeholder="maximun number of your customers" required>
+              <br>
+              <label for="AvgCookiesid" >
+                Average Cookies Per Hour: 
+              </label>
+              <input name="AvrCookiesidName" id="AvgCookiesid" type="text" placeholder="Average cookies sole per hour" required>
+              <br>
+              
+              <input name="submitBotton" type="submit" value=" Click Here to Add !">
+            </fieldset>
+        </form>
     <main>
         <h2>Cookies Sold</h2>
         <div id="TableOfData">
