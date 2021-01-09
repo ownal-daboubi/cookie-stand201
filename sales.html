@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Sale Data- Lab06</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -10,12 +10,6 @@
         <div class="topnav">
             <a class="active" href="sales.html">Sale Data</a>
             <a href="index.html">Home</a>
-            <div class="search-container">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
         </div>
         <h1>Salmon Cookies-Sale</h1>
     </header>
@@ -24,22 +18,26 @@
             <label for="locationNameid" >
                 Location Name: 
               </label>
+              <br>
               <input name="locationNamename" id="locationNameid" type="text" placeholder="add Location Name here" required>
               <br>
               <label for="MinCustomerid" >
                 Minimom Customers Per Hour: 
               </label>
-              <input name="minCustomerName" id="MinCustomerid" type="text" placeholder="minimun number of your customers" required>
+              <br>
+              <input name="minCustomerName" id="MinCustomerid" type="number" placeholder="minimun number of your customers" required min="1" max="900">
               <br>
               <label for="MaxCustomerid" >
                 Maximom Customers Per Hour: 
               </label>
-              <input name="maxCustomerName" id="maxCustomerid" type="text" placeholder="maximun number of your customers" required>
+              <br>
+              <input name="maxCustomerName" id="maxCustomerid" type="number" placeholder="maximun number of your customers" required min="10" max="1000">
               <br>
               <label for="AvgCookiesid" >
                 Average Cookies Per Hour: 
               </label>
-              <input name="AvrCookiesidName" id="AvgCookiesid" type="text" placeholder="Average cookies sole per hour" required>
+              <br>
+              <input name="AvrCookiesidName" id="AvgCookiesid" type="number" placeholder="Average cookies sole per hour" required min="1" max="10000">
               <br>
               
               <input name="submitBotton" type="submit" value=" Click Here to Add !">
@@ -60,6 +58,6 @@
     </main>
     <footer>
     </footer>
-    <script src="app2.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
